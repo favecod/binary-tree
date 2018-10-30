@@ -7,14 +7,18 @@ function setup() {
         tree.addValue(floor(random(0, 100)))
     }
     tree.traverse()
-    tree.search(floor(random(0,100)))
+    let number = floor(random(0, 100))
+    console.log('Number: ' + number)
+    tree.search(number)
     console.log(container)
 }
 
 // ----------Tree----------
 // Create
-function Tree() {
-    this.root = null
+class Tree {
+    constructor() {
+        this.root = null
+    }
 }
 
 // Add value 
@@ -34,7 +38,7 @@ Tree.prototype.traverse = function () {
 Tree.prototype.search = function (value) {
     let found = this.root.search(value)
     if (found != null) {
-        console.log('Found ' + value)
+        console.log('Found')
     } else if (found == null) {
         console.log('Not Found')
     }
@@ -42,10 +46,12 @@ Tree.prototype.search = function (value) {
 
 // ----------Node----------
 // Create
-function Node(value) {
-    this.value = value
-    this.left = null
-    this.right = null
+class Node {
+    constructor(value) {
+        this.value = value
+        this.left = null
+        this.right = null
+    }
 }
 
 // Add Node
